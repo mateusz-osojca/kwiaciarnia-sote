@@ -5,13 +5,13 @@
   "shortDescription": "Wielobarwny bukiet z kwiatów mieszanych w delikatnych tonacjach. Idealny dla osób, które lubią jak coś się dzieje, bez mocnej energii.",
   "description": "Wielobarny bukiet z kwiatów mieszanych, ale w delikatnych tonacjach. Idealny dla osób, które lubią jak coś się dzieje, ale niekoniecznie chcą aby było mocno energetycznie. Bukiet z użyciem kwiatów sezonowych dla danej pory roku. Nie zawsze mamy dostępne wszystkie gatunki użyte w bukietach ze zdjęć jednak bukiet jest najbardziej możliwie zbliżony klimatem i stylem.",
   "metaDescription": "Wielobarwny bukiet z kwiatów mieszanych w delikatnych tonacjach. Kwiaciarnia Sote, Szczecin.",
-  "mainImage": "bukiety/Blushing Meadow/1.jpg",
+  "mainImage": "/bukiety/Blushing Meadow/1.jpg",
   "galleryImages": [
-    "bukiety/Blushing Meadow/1.jpg",
-    "bukiety/Blushing Meadow/1000076541.jpg",
-    "bukiety/Blushing Meadow/1000078341.jpg",
-    "bukiety/Blushing Meadow/1000078994.jpg",
-    "bukiety/Blushing Meadow/1000079022.jpg"
+    "/bukiety/Blushing Meadow/1.jpg",
+    "/bukiety/Blushing Meadow/1000076541.jpg",
+    "/bukiety/Blushing Meadow/1000078341.jpg",
+    "/bukiety/Blushing Meadow/1000078994.jpg",
+    "/bukiety/Blushing Meadow/1000079022.jpg"
   ],
   "sizes": [
     { "label": "XS", "price": 100 },

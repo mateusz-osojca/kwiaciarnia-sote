@@ -2,6 +2,7 @@ backend:
   name: git-gateway
   branch: main
 
+site_url: "https://kwiaciarniasote.pl"
 media_folder: "bukiety"
 public_folder: "/bukiety"
 

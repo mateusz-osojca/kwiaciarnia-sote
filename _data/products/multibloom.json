@@ -5,14 +5,14 @@
   "shortDescription": "Bukiet kontrastowy, wielobarwny, z kwiatów mieszanych sezonowych. Pełen życia i koloru.",
   "description": "Bukiet kontrastowy, wielobarwny, ułożony z kwiatów mieszanych z użyciem kwiatów sezonowych dla danej pory roku. Zdjęcia mają charakter poglądowy. Nie zawsze mamy na stanie wszystkie gatunki kwiatów użyte w bukietach ze zdjęć jednak kompozycja jest najbardziej możliwie zbliżona do tych powyżej oraz zachowuje swój niepowtarzalny styl i klimat.",
   "metaDescription": "Bukiet kontrastowy, wielobarwny, z kwiatów mieszanych sezonowych. Kwiaciarnia Sote, Szczecin.",
-  "mainImage": "bukiety/Multibloom/1.jpg",
+  "mainImage": "/bukiety/Multibloom/1.jpg",
   "galleryImages": [
-    "bukiety/Multibloom/1.jpg",
-    "bukiety/Multibloom/1000030642.jpg",
-    "bukiety/Multibloom/1000033242.jpg",
-    "bukiety/Multibloom/1000079520.jpg",
-    "bukiety/Multibloom/1000079883.jpg",
-    "bukiety/Multibloom/1000079984.jpg"
+    "/bukiety/Multibloom/1.jpg",
+    "/bukiety/Multibloom/1000030642.jpg",
+    "/bukiety/Multibloom/1000033242.jpg",
+    "/bukiety/Multibloom/1000079520.jpg",
+    "/bukiety/Multibloom/1000079883.jpg",
+    "/bukiety/Multibloom/1000079984.jpg"
   ],
   "sizes": [
     { "label": "XS", "price": 100 },
