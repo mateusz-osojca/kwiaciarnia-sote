@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:kwiatyimiut.pl)",
+      "Bash(powershell:*)",
+      "Bash(python:*)",
+      "Bash(mv:*)",
+      "Bash(sed:*)",
+      "Bash(node:*)",
+      "Bash(mkdir:*)"
+    ]
+  }
+}

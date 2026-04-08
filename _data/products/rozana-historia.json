@@ -1,0 +1,22 @@
+{
+  "slug": "rozana-historia",
+  "name": "Różana Historia",
+  "category": "Klasyki",
+  "shortDescription": "Elegancki bukiet pełnych róż w odcieniach kremowo-różowych.",
+  "description": "Elegancki bukiet pełnych róż w ciepłych odcieniach kremowo-różowych. Owinięty w papier sulfonowy i przewiązany jedwabną wstążką.\n\nKażdy bukiet układamy ręcznie z kwiatów sezonowych. Dostawa w Szczecinie tego samego lub następnego dnia.",
+  "metaDescription": "Elegancki bukiet pełnych róż w odcieniach kremowo-różowych. Kwiaciarnia Sote, Szczecin.",
+  "mainImage": "https://picsum.photos/seed/roses-sote/800/600",
+  "galleryImages": [
+    "https://picsum.photos/seed/roses-sote/800/600",
+    "https://picsum.photos/seed/roses-sote2/800/600",
+    "https://picsum.photos/seed/roses-sote3/800/600",
+    "https://picsum.photos/seed/roses-sote4/800/600"
+  ],
+  "sizes": [
+    { "label": "S", "price": 100 },
+    { "label": "M", "price": 200 },
+    { "label": "L", "price": 300 }
+  ],
+  "featured": false,
+  "order": 7
+}

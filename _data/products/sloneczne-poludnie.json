@@ -1,0 +1,22 @@
+{
+  "slug": "sloneczne-poludnie",
+  "name": "Słoneczne Południe",
+  "category": "Klasyki",
+  "shortDescription": "Ciepła, promienna kompozycja ze słonecznikami, złotymi chryzantemami i eukaliptusem.",
+  "description": "Ciepła, promienna kompozycja ze słonecznikami, złotymi chryzantemami i liśćmi eukaliptusa. Jak butelka letniego słońca.\n\nKażdy bukiet układamy ręcznie z kwiatów sezonowych. Dostawa w Szczecinie tego samego lub następnego dnia.",
+  "metaDescription": "Ciepła, promienna kompozycja ze słonecznikami, złotymi chryzantemami i eukaliptusem. Kwiaciarnia Sote, Szczecin.",
+  "mainImage": "https://picsum.photos/seed/sunny-sote/800/600",
+  "galleryImages": [
+    "https://picsum.photos/seed/sunny-sote/800/600",
+    "https://picsum.photos/seed/sunny-sote2/800/600",
+    "https://picsum.photos/seed/sunny-sote3/800/600",
+    "https://picsum.photos/seed/sunny-sote4/800/600"
+  ],
+  "sizes": [
+    { "label": "S", "price": 100 },
+    { "label": "M", "price": 200 },
+    { "label": "L", "price": 300 }
+  ],
+  "featured": false,
+  "order": 9
+}

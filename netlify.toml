@@ -1,0 +1,50 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+  command = "node build-index.js"
+
+# Redirects for old product page URLs
+[[redirects]]
+  from = "/produkt-blushing-meadow.html"
+  to = "/produkt.html?slug=blushing-meadow"
+  status = 301
+
+[[redirects]]
+  from = "/produkt-multibloom.html"
+  to = "/produkt.html?slug=multibloom"
+  status = 301
+
+[[redirects]]
+  from = "/produkt-pastel-mood.html"
+  to = "/produkt.html?slug=pastel-mood"
+  status = 301
+
+[[redirects]]
+  from = "/produkt-bukiet-polny.html"
+  to = "/produkt.html?slug=bukiet-polny"
+  status = 301
+
+[[redirects]]
+  from = "/produkt-lawendowa-mgla.html"
+  to = "/produkt.html?slug=lawendowa-mgla"
+  status = 301
+
+[[redirects]]
+  from = "/produkt-wiosenne-marzenie.html"
+  to = "/produkt.html?slug=wiosenne-marzenie"
+  status = 301
+
+[[redirects]]
+  from = "/produkt-rozana-historia.html"
+  to = "/produkt.html?slug=rozana-historia"
+  status = 301
+
+[[redirects]]
+  from = "/produkt-bialy-sen.html"
+  to = "/produkt.html?slug=bialy-sen"
+  status = 301
+
+[[redirects]]
+  from = "/produkt-sloneczne-poludnie.html"
+  to = "/produkt.html?slug=sloneczne-poludnie"
+  status = 301

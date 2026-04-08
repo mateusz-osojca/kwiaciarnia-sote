@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kwiaciarnia Sote</title>
+  <meta name="description" content="Kwiaciarnia Sote – ręcznie układane bukiety, kompozycje sezonowe i warsztaty florystyczne w Szczecinie.">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+
+<!-- ========== NAWIGACJA ========== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="images/logo.jpg" alt="Kwiaciarnia Sote"></a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Strona główna</a></li>
+      <li><a href="o-nas.html">O nas</a></li>
+      <li><a href="sklep.html">Sklep</a></li>
+      <li style="display:none"><a href="warsztaty.html">Warsztaty</a></li>
+    </ul>
+
+    <button id="navCartBtn" class="nav-cart" onclick="openCartOnly()">&#128722; <span class="nav-cart-badge" id="navCartCount">0</span></button>
+    <button class="nav-hamburger" onclick="toggleNav()" aria-label="Menu">&#9776;</button>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="hero-bg" id="heroBg1"></div>
+  <div class="hero-bg" id="heroBg2"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Kwiaciarnia Sote &bull; Szczecin</p>
+    <h1>Kwiaty, które<br>mówią za Ciebie</h1>
+    <p>
+      Tworzymy bukiety z pasją i dbałością o każdy szczegół.
+      Natura, piękno i emocje zamknięte w pęku kwiatów.
+    </p>
+    <div class="hero-buttons">
+      <a href="sklep.html" class="btn btn-primary">Odkryj nasz sklep</a>
+      <a href="warsztaty.html" class="btn btn-outline" style="display:none">Warsztaty florystyczne</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== POLECANE BUKIETY ========== -->
+<section class="section section-bg-pink">
+  <div class="section-inner">
+
+    <div class="section-header">
+      <h2>Dostępne kompozycje</h2>
+    </div>
+
+    <div class="product-grid" id="featuredGrid"></div>
+
+    <div style="text-align:center; margin-top:2.5rem;">
+      <a href="sklep.html" class="btn btn-outline">Zobacz wszystkie bukiety &rarr;</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== O MNIE – ZAPOWIEDŹ ========== -->
+<section class="section">
+  <div class="section-inner">
+    <div class="split">
+      <!-- Zastąp src własnym zdjęciem -->
+      <img src="images/omnie/549802983_1404057478389951_5264162282881021681_n.jpg" alt="Kwiaciarnia Sote – pracownia">
+      <div class="text">
+        <span class="eyebrow">O nas</span>
+        <h2>Kwiaciarnia Sote powstała w 2014 roku z pasji i miłości do kwiatów i natury.</h2>
+        <div class="divider"></div>
+        <p>Od samego początku nasze bukiety wyróżniają się ciekawymi połączeniami kolorów, lekkością, luźnym, często asymetrycznym ułożeniem — ponieważ naszą największą inspiracją jest natura, a w niej wszystko jest najpiękniejsze i prawdziwe, żyjąc swoim życiem.</p>
+        <p>Nasze bukiety pełne pięknych, nietuzinkowych kwiatów są dla niej hołdem.</p>
+        <p>Wierzymy, że kwiaty przekazują emocje i mają swój charakter, dlatego każdy nasz bukiet i każda kompozycja jest niepowtarzalna — opowiadając inną historię.</p>
+        <a href="o-nas.html" class="btn btn-outline">Poznaj naszą historię</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WARSZTATY – ZAPOWIEDŹ ========== -->
+<section class="section section-bg-green" style="display:none">
+  <div class="section-inner">
+
+    <div class="section-header">
+      <span class="section-eyebrow">Warsztaty</span>
+      <h2>Naucz się tworzyć piękno</h2>
+      <p>Organizuję kameralne warsztaty florystyczne dla małych grup – dla początkujących i zaawansowanych.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-item">
+        <div class="feature-icon">&#127826;</div>
+        <h3>Suche kwiaty</h3>
+        <p>Tworzenie bukietów i kompozycji z suszonych kwiatów. Trwałe piękno na wiele miesięcy.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">&#128144;</div>
+        <h3>Wianki florystyczne</h3>
+        <p>Od podstaw stworzysz swój własny wianek – na drzwi, do włosów lub jako ozdobę stołu.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">&#127982;</div>
+        <h3>Kompozycje stołowe</h3>
+        <p>Naucz się tworzyć piękne dekoracje stołu na rodzinne uroczystości i specjalne okazje.</p>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:2.5rem;">
+      <a href="warsztaty.html" class="btn btn-green">Sprawdź terminy</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== KONTAKT ========== -->
+<section class="section">
+  <div class="section-inner">
+
+    <div class="section-header">
+      <span class="section-eyebrow">Kontakt</span>
+      <h2>Znajdziesz nas tutaj</h2>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-item">
+        <p class="label">Adres</p>
+        <p class="value"><a href="https://www.google.com/maps/search/?api=1&query=ul.+Ks.+Bogus%C5%82awa+42%2F2a%2C+70-440+Szczecin" target="_blank" rel="noopener">ul. Ks. Bogusława 42/2a<br>70-440 Szczecin</a><br><span style="display:block; margin-top:0.6rem; font-size:0.78rem; color:var(--text-light);">NIP: 9552153798<br>REGON: 525204294</span></p>
+      </div>
+      <div class="contact-item">
+        <p class="label">Godziny otwarcia</p>
+        <p class="value">Pon–Pt: 10:00–18:00<br>Sob: 10:00–14:00<br>Nd: nieczynne</p>
+      </div>
+      <div class="contact-item">
+        <p class="label">Telefon</p>
+        <p class="value"><a href="tel:+48724459778">724 459 778</a></p>
+      </div>
+      <div class="contact-item">
+        <p class="label">E-mail</p>
+        <p class="value"><a href="mailto:kwiaciarniasote@gmail.com">kwiaciarniasote@gmail.com</a></p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== STOPKA ========== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Kwiaciarnia&nbsp;<em>Sote</em></div>
+    <p class="footer-tagline">Kwiaty z duszą &bull; Szczecin</p>
+    <ul class="footer-links">
+      <li><a href="index.html">Strona główna</a></li>
+      <li><a href="o-nas.html">O nas</a></li>
+      <li><a href="sklep.html">Sklep</a></li>
+    </ul>
+    <p class="footer-copy">&copy; 2025 Kwiaciarnia Sote. Wszelkie prawa zastrzeżone.</p>
+    <p class="footer-copy"><a href="regulamin.html">Regulamin</a></p>
+  </div>
+</footer>
+
+
+<script>
+  function toggleNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+  // Zamknij menu po kliknięciu w link
+  document.querySelectorAll('.nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+</script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", function(user) {
+      if (!user) {
+        window.netlifyIdentity.on("login", function() {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+<script src="products.js"></script>
+<script>renderProductGrid('featuredGrid', { featuredOnly: true });</script>
+<script src="checkout.js"></script>
+<script src="slideshow.js"></script>
+<script>
+  (function() {
+    var images = [
+      { src: 'images/main/ada1.jpg', pos: 'center 42%' },
+      { src: 'images/main/ada2.jpg', pos: 'center 65%' },
+      { src: 'images/main/ada3.jpg', pos: 'center top' }
+    ];
+    var bg1 = document.getElementById('heroBg1');
+    var bg2 = document.getElementById('heroBg2');
+    var current = 0;
+    var active = bg1, inactive = bg2;
+
+    bg1.style.backgroundImage = 'url(' + images[0].src + ')';
+    bg1.style.backgroundPosition = images[0].pos;
+    bg1.style.opacity = '1';
+    bg2.style.opacity = '0';
+
+    setInterval(function() {
+      current = (current + 1) % images.length;
+      inactive.style.backgroundImage = 'url(' + images[current].src + ')';
+      inactive.style.backgroundPosition = images[current].pos;
+      inactive.style.opacity = '1';
+      active.style.opacity = '0';
+      var tmp = active; active = inactive; inactive = tmp;
+    }, 5000);
+  })();
+</script>
+
+</body>
+</html>

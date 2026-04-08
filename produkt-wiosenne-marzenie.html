@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kwiaciarnia Sote</title>
+  <meta name="description" content="Radosna kompozycja z tulipanami, ranunkulusami i gałązkami eukaliptusa. Kwiaciarnia Sote, Szczecin.">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="images/logo.jpg" alt="Kwiaciarnia Sote"></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Strona główna</a></li>
+      <li><a href="o-nas.html">O nas</a></li>
+      <li><a href="sklep.html" class="active">Sklep</a></li>
+      <li><a href="warsztaty.html">Warsztaty</a></li>
+    </ul>
+    <button id="navCartBtn" class="nav-cart" onclick="openCartOnly()">&#128722; <span class="nav-cart-badge" id="navCartCount">0</span></button>
+    <button class="nav-hamburger" onclick="toggleNav()" aria-label="Menu">&#9776;</button>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="sklep.html">Sklep</a>
+  <span>›</span>
+  Wiosenne Marzenie
+</div>
+
+<section class="product-detail">
+  <div class="product-detail-inner">
+
+    <div class="product-gallery">
+      <img id="mainImg" class="product-gallery-main"
+        src="https://picsum.photos/seed/spring-sote/800/600"
+        alt="Wiosenne Marzenie">
+      <div class="product-gallery-thumbs">
+        <img class="product-thumb active"
+          src="https://picsum.photos/seed/spring-sote/800/600"
+          alt="Wiosenne Marzenie 1" onclick="switchImg(this)">
+        <img class="product-thumb"
+          src="https://picsum.photos/seed/spring-sote2/800/600"
+          alt="Wiosenne Marzenie 2" onclick="switchImg(this)">
+        <img class="product-thumb"
+          src="https://picsum.photos/seed/spring-sote3/800/600"
+          alt="Wiosenne Marzenie 3" onclick="switchImg(this)">
+        <img class="product-thumb"
+          src="https://picsum.photos/seed/spring-sote4/800/600"
+          alt="Wiosenne Marzenie 4" onclick="switchImg(this)">
+      </div>
+    </div>
+
+    <div class="product-info">
+      <p class="product-info-category">Wiosna</p>
+      <h1 class="product-info-name">Wiosenne Marzenie</h1>
+
+      <p class="product-sizes-label">Wybierz rozmiar</p>
+      <div class="product-sizes">
+        <button class="size-btn active" data-size="S" data-price="100" onclick="selectSize(this)">
+          <span class="size-btn-label">S</span>
+          <span class="size-btn-price">100 zł</span>
+        </button>
+        <button class="size-btn" data-size="M" data-price="200" onclick="selectSize(this)">
+          <span class="size-btn-label">M</span>
+          <span class="size-btn-price">200 zł</span>
+        </button>
+        <button class="size-btn" data-size="L" data-price="300" onclick="selectSize(this)">
+          <span class="size-btn-label">L</span>
+          <span class="size-btn-price">300 zł</span>
+        </button>
+      </div>
+
+      <p class="product-current-price" id="currentPrice">100 zł</p>
+
+      <p class="product-info-desc">
+        Radosna kompozycja z tulipanami, ranunkulusami i gałązkami eukaliptusa.
+        Obiecuje wiosnę przez cały rok – pełna świeżości i delikatnego aromatu.<br><br>
+        Każdy bukiet układamy ręcznie z kwiatów sezonowych. Dostawa w Szczecinie tego samego lub następnego dnia.
+      </p>
+
+      <button id="cartBtn" class="btn btn-primary" onclick="openCheckout()">
+        Dodaj do koszyka
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Kwiaciarnia&nbsp;<em>Sote</em></div>
+    <p class="footer-tagline">Kwiaty z duszą &bull; Szczecin</p>
+    <ul class="footer-links">
+      <li><a href="index.html">Strona główna</a></li>
+      <li><a href="o-nas.html">O nas</a></li>
+      <li><a href="sklep.html">Sklep</a></li>
+    </ul>
+    <p class="footer-copy">&copy; 2025 Kwiaciarnia Sote. Wszelkie prawa zastrzeżone.</p>
+    <p class="footer-copy"><a href="regulamin.html">Regulamin</a></p>
+  </div>
+</footer>
+
+
+<script>
+  var productId   = 'wiosenne-marzenie';
+  var productName = 'Wiosenne Marzenie';
+  var selectedSize  = 'S';
+  var selectedPrice = 100;
+
+  function toggleNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+  document.querySelectorAll('.nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+  function switchImg(thumb) {
+    document.getElementById('mainImg').src = thumb.src;
+    document.querySelectorAll('.product-thumb').forEach(t => t.classList.remove('active'));
+    thumb.classList.add('active');
+  }
+  function selectSize(btn) {
+    document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    selectedSize  = btn.dataset.size;
+    selectedPrice = parseInt(btn.dataset.price, 10);
+    document.getElementById('currentPrice').textContent = selectedPrice + ' zł';
+  }
+</script>
+<script src="checkout.js"></script>
+
+</body>
+</html>

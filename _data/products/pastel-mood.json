@@ -1,0 +1,26 @@
+{
+  "slug": "pastel-mood",
+  "name": "Pastel Mood",
+  "category": "Bukiety sezonowe",
+  "shortDescription": "Bukiet w jasnych, pastelowych odcieniach – delikatny, eteryczny, kobiecy.",
+  "description": "Bukiet w jasnych, delikatnych odcieniach uwielbianych przez kobiety. Delikatny, eteryczny, kobiecy. Ułożony z kwiatów mieszanych z użyciem kwiatów sezonowych dla danej pory roku. Zdjęcia mają charakter poglądowy. Nie zawsze mamy na stanie wszystkie gatunki kwiatów użyte w bukietach ze zdjęć jednak kompozycja jest najbardziej możliwie zbliżona do tych powyżej oraz zachowuje swój niepowtarzalny styl i klimat.",
+  "metaDescription": "Bukiet w jasnych, delikatnych odcieniach – delikatny, eteryczny, kobiecy. Kwiaciarnia Sote, Szczecin.",
+  "mainImage": "bukiety/Pastel Mood/1.jpg",
+  "galleryImages": [
+    "bukiety/Pastel Mood/1.jpg",
+    "bukiety/Pastel Mood/643701590_1236604681385301_6213463224731484996_n.jpg",
+    "bukiety/Pastel Mood/645236911_935775182238847_6035349876293660723_n.jpg",
+    "bukiety/Pastel Mood/646282579_1428237334885114_433137515894676765_n.jpg",
+    "bukiety/Pastel Mood/646544804_902700946001948_6366319088797025408_n.jpg"
+  ],
+  "sizes": [
+    { "label": "XS", "price": 100 },
+    { "label": "S", "price": 150 },
+    { "label": "M", "price": 250 },
+    { "label": "L", "price": 350 },
+    { "label": "XL", "price": 450 },
+    { "label": "XXL", "price": 650 }
+  ],
+  "featured": true,
+  "order": 3
+}

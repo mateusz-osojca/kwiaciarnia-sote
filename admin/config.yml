@@ -1,0 +1,96 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "bukiety"
+public_folder: "bukiety"
+
+locale: "pl"
+
+collections:
+  - name: "products"
+    label: "Bukiety"
+    folder: "_data/products"
+    create: true
+    delete: true
+    extension: "json"
+    format: "json"
+    slug: "{{slug}}"
+    identifier_field: "name"
+    summary: "{{name}} ({{category}}) – kolejność: {{order}}"
+    fields:
+      - label: "Nazwa"
+        name: "name"
+        widget: "string"
+        hint: "Nazwa bukietu wyświetlana na stronie"
+
+      - label: "Slug (adres URL)"
+        name: "slug"
+        widget: "string"
+        pattern: ['^[a-z0-9-]+$', "Tylko małe litery, cyfry i myślniki (np. blushing-meadow)"]
+        hint: "Używany w adresie strony, np. 'blushing-meadow' → /produkt.html?slug=blushing-meadow"
+
+      - label: "Kategoria"
+        name: "category"
+        widget: "string"
+        default: "Bukiety sezonowe"
+        hint: "Np. Bukiety sezonowe, Klasyki, Wiosna"
+
+      - label: "Krótki opis (karta produktu)"
+        name: "shortDescription"
+        widget: "text"
+        required: false
+        hint: "Widoczny na liście produktów w sklepie"
+
+      - label: "Pełny opis (strona produktu)"
+        name: "description"
+        widget: "text"
+        hint: "Widoczny po kliknięciu w produkt"
+
+      - label: "Meta description (SEO)"
+        name: "metaDescription"
+        widget: "string"
+        required: false
+        hint: "Opis widoczny w wynikach Google"
+
+      - label: "Zdjęcie główne"
+        name: "mainImage"
+        widget: "image"
+        hint: "Główne zdjęcie produktu (format JPG/WebP, min. 600px szerokości)"
+
+      - label: "Galeria zdjęć"
+        name: "galleryImages"
+        widget: "list"
+        hint: "Dodatkowe zdjęcia widoczne na stronie produktu"
+        field:
+          label: "Zdjęcie"
+          name: "image"
+          widget: "image"
+
+      - label: "Rozmiary i ceny"
+        name: "sizes"
+        widget: "list"
+        hint: "Dodaj dostępne rozmiary z cenami"
+        fields:
+          - label: "Rozmiar"
+            name: "label"
+            widget: "string"
+            hint: "Np. XS, S, M, L, XL, XXL"
+          - label: "Cena (zł)"
+            name: "price"
+            widget: "number"
+            value_type: "int"
+            min: 1
+
+      - label: "Wyróżniany (strona główna)"
+        name: "featured"
+        widget: "boolean"
+        default: false
+        hint: "Zaznacz, aby bukiet pojawił się na stronie głównej"
+
+      - label: "Kolejność"
+        name: "order"
+        widget: "number"
+        value_type: "int"
+        default: 10
+        hint: "Mniejsza liczba = wyżej na liście"

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regulamin – Kwiaciarnia Sote</title>
+  <meta name="description" content="Regulamin sklepu internetowego Kwiaciarni Sote w Szczecinie.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="images/logo.jpg" alt="Kwiaciarnia Sote"></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Strona główna</a></li>
+      <li><a href="o-nas.html">O nas</a></li>
+      <li><a href="sklep.html">Sklep</a></li>
+      <li style="display:none"><a href="warsztaty.html">Warsztaty</a></li>
+    </ul>
+    <button id="navCartBtn" class="nav-cart" onclick="openCartOnly()">&#128722; <span class="nav-cart-badge" id="navCartCount">0</span></button>
+    <button class="nav-hamburger" onclick="toggleNav()" aria-label="Menu">&#9776;</button>
+  </div>
+</nav>
+
+<header class="page-header">
+  <h1>Regulamin</h1>
+  <div class="divider center"></div>
+  <p>Regulamin sklepu internetowego Kwiaciarni Sote</p>
+</header>
+
+<section class="section">
+  <div class="section-inner" style="max-width: 720px;">
+
+    <h2>§1. Postanowienia ogólne</h2>
+    <p>Sklep internetowy dostępny pod adresem <strong>kwiaciarniasote.pl</strong> prowadzony jest przez Kwiaciarnię Sote z siedzibą przy ul. Ks. Bogusława 42/2a, 70-440 Szczecin. NIP: 9552153798, REGON: 525204294.</p>
+    <p>Kontakt z obsługą: <a href="mailto:kwiaciarniasote@gmail.com">kwiaciarniasote@gmail.com</a>, tel. <a href="tel:+48724459778">724 459 778</a>.</p>
+    <p>Składając zamówienie, Klient akceptuje niniejszy Regulamin w całości.</p>
+
+    <h2>§2. Zamówienia</h2>
+    <p>Zamówienia przyjmowane są przez formularz na stronie. Po złożeniu zamówienia Klient otrzymuje potwierdzenie na podany adres e-mail.</p>
+    <p>Zamówienie jest wiążące z chwilą dokonania płatności online lub potwierdzenia zamówienia gotówkowego.</p>
+    <p>Kwiaciarnia zastrzega sobie prawo do odmowy realizacji zamówienia w przypadku braku dostępności kwiatów lub innych okoliczności uniemożliwiających jego realizację – w takim przypadku Klient zostanie niezwłocznie poinformowany, a wpłacone środki zwrócone w całości.</p>
+
+    <h2>§3. Wygląd bukietów</h2>
+    <p>Zdjęcia bukietów mają charakter <strong>poglądowy</strong>. Każdy bukiet jest tworzony ręcznie z kwiatów sezonowych dostępnych w danym dniu, dlatego gotowy bukiet może różnić się od zdjęcia pod względem użytych gatunków, kolorów poszczególnych kwiatów oraz dokładnego układu.</p>
+    <p>Kwiaciarnia dba o to, aby każdy bukiet zachował swój niepowtarzalny charakter i klimat zgodny z prezentowanym stylem.</p>
+
+    <h2>§4. Ceny i płatności</h2>
+    <p>Wszystkie ceny podane na stronie są cenami brutto wyrażonymi w złotych polskich (PLN).</p>
+    <p>Dostępne formy płatności: karta płatnicza, BLIK, Przelewy24 – realizowane za pośrednictwem systemu Stripe.</p>
+    <p>Płatność jest pobierana w chwili składania zamówienia. Dokonując płatności, Klient wyraża zgodę na pobranie wskazanej kwoty.</p>
+
+    <h2>§5. Dostawa i odbiór</h2>
+    <p>Dostawa realizowana jest na terenie Szczecina. Koszt dostawy wynosi 25 zł.</p>
+    <p>Możliwy jest również odbiór osobisty w kwiaciarni przy ul. Ks. Bogusława 42/2a w godzinach otwarcia.</p>
+    <p>Termin dostawy lub odbioru ustalany jest podczas składania zamówienia. Kwiaciarnia dokłada wszelkich starań, aby dotrzymać wybranego terminu.</p>
+
+    <h2>§6. Zwroty i reklamacje</h2>
+    <p>Ze względu na <strong>nietrwały charakter produktów</strong> (świeże kwiaty cięte), zamówione bukiety <strong>nie podlegają zwrotowi</strong> ani wymianie po ich wykonaniu i odebraniu/dostarczeniu.</p>
+    <p>Jeśli bukiet dotarł uszkodzony lub znacząco odbiega od zamówienia, prosimy o kontakt w ciągu 24 godzin od odbioru – najlepiej ze zdjęciem – pod adresem <a href="mailto:kwiaciarniasote@gmail.com">kwiaciarniasote@gmail.com</a> lub telefonicznie. Każdą reklamację rozpatrujemy indywidualnie.</p>
+
+    <h2>§7. Ochrona danych osobowych</h2>
+    <p>Dane osobowe podane podczas składania zamówienia (imię, adres, telefon, e-mail) są wykorzystywane wyłącznie w celu realizacji zamówienia i nie są przekazywane osobom trzecim, za wyjątkiem podmiotów niezbędnych do realizacji płatności (Stripe).</p>
+
+    <h2>§8. Postanowienia końcowe</h2>
+    <p>Kwiaciarnia zastrzega sobie prawo do zmiany Regulaminu. Zmiany obowiązują od momentu ich publikacji na stronie.</p>
+    <p>W sprawach nieuregulowanych niniejszym Regulaminem zastosowanie mają przepisy Kodeksu cywilnego.</p>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Kwiaciarnia&nbsp;<em>Sote</em></div>
+    <p class="footer-tagline">Kwiaty z duszą &bull; Szczecin</p>
+    <ul class="footer-links">
+      <li><a href="index.html">Strona główna</a></li>
+      <li><a href="o-nas.html">O nas</a></li>
+      <li><a href="sklep.html">Sklep</a></li>
+    </ul>
+    <p class="footer-copy">&copy; 2025 Kwiaciarnia Sote. Wszelkie prawa zastrzeżone.</p>
+    <p class="footer-copy"><a href="regulamin.html">Regulamin</a></p>
+  </div>
+</footer>
+
+<script>
+  function toggleNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+  document.querySelectorAll('.nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+</script>
+<script src="checkout.js"></script>
+
+</body>
+</html>

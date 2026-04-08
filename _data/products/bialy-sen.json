@@ -1,0 +1,22 @@
+{
+  "slug": "bialy-sen",
+  "name": "Biały Sen",
+  "category": "Klasyki",
+  "shortDescription": "Czysty, spokojny bukiet w odcieniach bieli i kremowego.",
+  "description": "Czysty, spokojny bukiet w odcieniach bieli i kremowego: gipsówka, białe eustomie, magnolia i gałązki delikatnego asparagusa.\n\nKażdy bukiet układamy ręcznie z kwiatów sezonowych. Dostawa w Szczecinie tego samego lub następnego dnia.",
+  "metaDescription": "Czysty, spokojny bukiet w odcieniach bieli i kremowego. Kwiaciarnia Sote, Szczecin.",
+  "mainImage": "https://picsum.photos/seed/white-sote/800/600",
+  "galleryImages": [
+    "https://picsum.photos/seed/white-sote/800/600",
+    "https://picsum.photos/seed/white-sote2/800/600",
+    "https://picsum.photos/seed/white-sote3/800/600",
+    "https://picsum.photos/seed/white-sote4/800/600"
+  ],
+  "sizes": [
+    { "label": "S", "price": 100 },
+    { "label": "M", "price": 200 },
+    { "label": "L", "price": 300 }
+  ],
+  "featured": false,
+  "order": 8
+}
