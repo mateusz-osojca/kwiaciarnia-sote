@@ -3,7 +3,7 @@ backend:
   branch: main
 
 media_folder: "bukiety"
-public_folder: "bukiety"
+public_folder: "/bukiety"
 
 locale: "pl"
 
