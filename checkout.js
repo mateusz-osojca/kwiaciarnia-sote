@@ -1,6 +1,30 @@
 (function () {
   'use strict';
 
+  /* ---- Closed days ---- */
+  var CLOSED_DAYS = [];
+  var CLOSED_REASONS = {};
+
+  function loadClosedDays() {
+    return fetch('_data/closed-days.json').then(function (r) {
+      if (!r.ok) return;
+      return r.json();
+    }).then(function (data) {
+      if (data && data.closedDays) {
+        CLOSED_DAYS = [];
+        CLOSED_REASONS = {};
+        data.closedDays.forEach(function (d) {
+          CLOSED_DAYS.push(d.date);
+          if (d.reason) CLOSED_REASONS[d.date] = d.reason;
+        });
+      }
+    }).catch(function () { /* ignore */ });
+  }
+
+  function isClosedDay(dateStr) {
+    return CLOSED_DAYS.indexOf(dateStr) !== -1;
+  }
+
   /* ---- Cart storage (localStorage) ---- */
   var CART_KEY = 'sote_cart';
 
@@ -57,6 +81,7 @@
   /* ---- Time slots by day of week ---- */
   function getSlotsForDate(dateStr) {
     if (!dateStr) return [];
+    if (isClosedDay(dateStr)) return null; // admin-set closed day
     if (dateStr === '2026-03-07') { // Sobota 7 marca – wyjątek (10:00–18:00)
       var exSlots = [];
       for (var eh = 10; eh < 18; eh++) {
@@ -94,7 +119,11 @@
     }
     var slots = getSlotsForDate(dateStr);
     if (slots === null) {
-      alert('Niedziela – sklep jest nieczynny. Wybierz inny dzień.');
+      var reason = CLOSED_REASONS[dateStr];
+      var msg = reason
+        ? 'Sklep jest nieczynny w tym dniu (' + reason + '). Wybierz inny dzień.'
+        : 'Sklep jest nieczynny w tym dniu. Wybierz inny dzień.';
+      alert(msg);
       dateInput.value = '';
       select.innerHTML = '<option value="">— najpierw wybierz datę —</option>';
       return;
@@ -120,6 +149,7 @@
   /* ---- Delivery time ranges (2-hour windows) ---- */
   function getDeliverySlotsForDate(dateStr) {
     if (!dateStr) return [];
+    if (isClosedDay(dateStr)) return null; // admin-set closed day
     var d = new Date(dateStr + 'T12:00:00');
     var day = d.getDay();
     if (day === 0) return null; // closed Sunday
@@ -140,7 +170,11 @@
     }
     var slots = getDeliverySlotsForDate(dateStr);
     if (slots === null) {
-      alert('Niedziela \u2013 sklep jest nieczynny. Wybierz inny dzie\u0144.');
+      var reason = CLOSED_REASONS[dateStr];
+      var msg = reason
+        ? 'Sklep jest nieczynny w tym dniu (' + reason + '). Wybierz inny dzień.'
+        : 'Sklep jest nieczynny w tym dniu. Wybierz inny dzień.';
+      alert(msg);
       dateInput.value = '';
       select.innerHTML = '<option value="">— najpierw wybierz datę —</option>';
       return;
@@ -660,9 +694,11 @@
 
   /* ---- Bootstrap ---- */
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', function () {
+      loadClosedDays().then(init);
+    });
   } else {
-    init();
+    loadClosedDays().then(init);
   }
 
   window.addEventListener('pageshow', function () {

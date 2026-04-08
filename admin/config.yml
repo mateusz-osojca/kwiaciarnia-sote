@@ -8,6 +8,31 @@ public_folder: "bukiety"
 locale: "pl"
 
 collections:
+  - name: "settings"
+    label: "Ustawienia"
+    files:
+      - name: "closed-days"
+        label: "Dni zamknięcia sklepu"
+        file: "_data/closed-days.json"
+        fields:
+          - label: "Zamknięte dni"
+            name: "closedDays"
+            widget: "list"
+            hint: "Dodaj daty, w których sklep jest zamknięty (np. święta, urlop)"
+            fields:
+              - label: "Data"
+                name: "date"
+                widget: "datetime"
+                date_format: "YYYY-MM-DD"
+                time_format: false
+                format: "YYYY-MM-DD"
+                hint: "Wybierz dzień zamknięcia"
+              - label: "Powód (opcjonalnie)"
+                name: "reason"
+                widget: "string"
+                required: false
+                hint: "Np. Święta, Urlop, Remont"
+
   - name: "products"
     label: "Bukiety"
     folder: "_data/products"
