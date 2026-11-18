@@ -20,9 +20,12 @@
     var imgSrc = encodeImagePath(p.mainImage);
     var link = 'produkt.html?slug=' + encodeURIComponent(p.slug);
 
-    var priceTags = p.sizes.map(function (s) {
-      return '<span class="price-tag">' + s.label + ' – ' + s.price + ' zł</span>';
-    }).join('\n            ');
+    // Payment Link products (e.g. workshops) have a single price and no sizes
+    var priceTags = p.paymentLink
+      ? '<span class="price-tag">' + p.sizes[0].price + ' zł</span>'
+      : p.sizes.map(function (s) {
+          return '<span class="price-tag">' + s.label + ' – ' + s.price + ' zł</span>';
+        }).join('\n            ');
 
     var dataImages = p.galleryImages.map(function (img) {
       return encodeImagePath(img);
@@ -75,6 +78,7 @@
   function setupPaymentLink(p) {
     var sizesLabel = document.querySelector('.product-sizes-label');
     if (sizesLabel) sizesLabel.style.display = 'none';
+    document.getElementById('productSizes').style.display = 'none';
 
     var status = document.createElement('span');
     status.className = 'workshop-status seat-status';

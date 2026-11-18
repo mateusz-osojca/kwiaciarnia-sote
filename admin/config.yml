@@ -113,7 +113,7 @@ collections:
         widget: "string"
         required: false
         pattern: ['^https://buy\.stripe\.com/.+$', "Wklej link z Stripe, zaczynający się od https://buy.stripe.com/"]
-        hint: "Zostaw puste dla bukietów. Jeśli wpiszesz link Stripe Payment Link, przycisk prowadzi prosto do Stripe zamiast do koszyka, a po wyczerpaniu limitu płatności ustawionego w Stripe strona pokaże 'Wyprzedane'."
+        hint: "Zostaw puste dla bukietów. Dla warsztatu dodaj w 'Rozmiary i ceny' tylko jedną pozycję (nazwa rozmiaru dowolna, np. 1 osoba, nie jest wyświetlana) z ceną taką samą jak w Stripe. Jeśli wpiszesz link Stripe Payment Link, przycisk prowadzi prosto do Stripe zamiast do koszyka, a po wyczerpaniu limitu płatności ustawionego w Stripe strona pokaże 'Wyprzedane'."
 
       - label: "Wyróżniany (strona główna)"
         name: "featured"
