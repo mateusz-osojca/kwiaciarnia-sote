@@ -36,14 +36,65 @@
         '<p class="product-category">' + p.category + '</p>' +
         '<h3 class="product-name">' + p.name + '</h3>' +
         '<p class="product-desc">' + (p.shortDescription || '') + '</p>' +
+        (p.paymentLink ? '<span class="workshop-status seat-status" data-payment-link="' + p.paymentLink + '" style="display:none; align-self:flex-start"></span>' : '') +
         '<div class="product-price-tags">' +
           priceTags +
         '</div>' +
         '<div class="product-footer">' +
-          '<a href="' + link + '" class="btn-cart">Wybierz bukiet</a>' +
+          '<a href="' + link + '" class="btn-cart">' + (p.paymentLink ? 'Zobacz szczegóły' : 'Wybierz bukiet') + '</a>' +
         '</div>' +
       '</div>' +
     '</div>';
+  }
+
+  /* ---- Payment Link products (e.g. workshops with limited seats) ---- */
+  function checkSeats(paymentLink, cb) {
+    fetch('/.netlify/functions/workshop-seats?link=' + encodeURIComponent(paymentLink))
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (seats) { if (seats) cb(seats); })
+      .catch(function () { /* unknown: leave the button as is, Stripe still enforces the limit */ });
+  }
+
+  function showSeatStatus(el, seats) {
+    el.classList.remove('status-open', 'status-few', 'status-full');
+    if (!seats.available) {
+      el.textContent = 'Wyprzedane';
+      el.classList.add('status-full');
+    } else if (seats.left !== null && seats.left <= 3) {
+      el.textContent = 'Ostatnie miejsca: ' + seats.left;
+      el.classList.add('status-few');
+    } else if (seats.left !== null) {
+      el.textContent = 'Wolne miejsca: ' + seats.left;
+      el.classList.add('status-open');
+    } else {
+      return;
+    }
+    el.style.display = '';
+  }
+
+  function setupPaymentLink(p) {
+    var sizesLabel = document.querySelector('.product-sizes-label');
+    if (sizesLabel) sizesLabel.style.display = 'none';
+
+    var status = document.createElement('span');
+    status.className = 'workshop-status seat-status';
+    status.style.display = 'none';
+    document.getElementById('productName').insertAdjacentElement('afterend', status);
+
+    var btn = document.getElementById('cartBtn');
+    btn.textContent = 'Zapisz się i zapłać';
+    btn.onclick = function () { window.location.href = p.paymentLink; };
+
+    checkSeats(p.paymentLink, function (seats) {
+      showSeatStatus(status, seats);
+      if (!seats.available) {
+        btn.disabled = true;
+        btn.style.opacity = '0.5';
+        btn.style.cursor = 'not-allowed';
+        btn.textContent = 'Wyprzedane';
+        btn.onclick = null;
+      }
+    });
   }
 
   /* ---- renderProductGrid ---- */
@@ -68,6 +119,11 @@
       }
 
       container.innerHTML = products.map(cardHTML).join('\n');
+
+      // Seat status for products sold via a Stripe Payment Link (bouquets have none)
+      container.querySelectorAll('.seat-status').forEach(function (el) {
+        checkSeats(el.dataset.paymentLink, function (seats) { showSeatStatus(el, seats); });
+      });
 
       // Re-init slideshow for newly rendered cards
       if (typeof window.initSlideshow === 'function') {
@@ -131,6 +187,9 @@
       // Description — convert \n\n to <br><br>
       var descHtml = p.description.replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>');
       document.getElementById('productDescription').innerHTML = descHtml;
+
+      // Products sold via a Stripe Payment Link (e.g. workshops) skip the cart
+      if (p.paymentLink) setupPaymentLink(p);
 
       // Set globals for checkout.js
       window.productId = p.slug;
